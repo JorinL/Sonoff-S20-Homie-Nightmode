@@ -123,6 +123,7 @@ void setup() {
   relayNode.advertise("on").settable(relayHandler);
   //Next line disables WLAN or MQTT LED Feedback
   Homie.disableLedFeedback(); // before Homie.setup()
+  Homie.disableResetTrigger();
   Homie.setup();
   ArduinoOTA.setHostname(Homie.getConfiguration().deviceId);
   ArduinoOTA.begin();
